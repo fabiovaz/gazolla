@@ -1,16 +1,4 @@
-import localFont from "next/font/local";
 import "./globals.css";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 export const metadata = {
   title: "Create Next App",
@@ -20,10 +8,49 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className="bg-white antialiased text-gray-950">
+        <div className="container mx-auto px-4 py-6">
+          <header>
+            <div className="flex items-center justify-between">
+              <div>
+                <h2 className="text-3xl"><span className="font-semibold">Daniel Gazolla</span> | Product Designer</h2>
+              </div>
+              <div className="flex font-semibold gap-6">
+                <div className="flex flex-col text-end">
+                  <a href="mailto:daniel.gazolla@gmail.com">daniel.gazolla@gmail.com</a>
+                  <a href="tel:+5561999089161" className="text-gray-400">+55 61 99908-9161</a>
+                </div>
+                <div>
+                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M44.448 0H3.5448C1.584 0 0 1.548 0 3.4584V44.532C0 46.4448 1.584 48 3.5448 48H44.448C46.4064 48 48 46.4448 48 44.5416V3.4584C48 1.548 46.4064 0 44.448 0ZM14.2416 40.9032H7.116V17.9904H14.2416V40.9032ZM10.6776 14.868C8.3904 14.868 6.5448 13.0224 6.5448 10.7448C6.5448 8.4648 8.3904 6.6192 10.6776 6.6192C12.9552 6.6192 14.8032 8.4648 14.8032 10.7448C14.8032 13.0128 12.9552 14.868 10.6776 14.868ZM40.9032 40.9032H33.7872V29.7648C33.7872 27.1128 33.7416 23.6904 30.084 23.6904C26.3808 23.6904 25.8192 26.5872 25.8192 29.5776V40.9032H18.7128V17.9904H25.5384V21.1224H25.632C26.5776 19.3224 28.9032 17.4192 32.3616 17.4192C39.5712 17.4192 40.9032 22.1616 40.9032 28.332V40.9032Z" fill="#333333"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </header>
+          
+          {children}
+
+          <footer>
+            <hr />
+            <div className="flex items-center justify-between">
+              <div className="flex gap-8">
+                <div className="flex flex-col">
+                  <h6>Daniel Gazolla</h6>
+                  <p className="text-gray-400">Designer de produto/Diretor de arte</p>
+                </div>
+                <div className="flex flex-col">
+                  <a href="mailto:daniel.gazolla@gmail.com" className="text-gray-400">daniel.gazolla@gmail.com</a>
+                  <a href="tel:+5561999089161" className="text-gray-400">+55 61 99908-9161</a>
+                </div>
+              </div>
+              <div className="flex flex-col text-end">
+                <span  className="text-gray-400">© 2024</span>
+                <button>Voltar ao Topo ↑</button>
+              </div>
+            </div>
+          </footer>
+        </div>
       </body>
     </html>
   );
